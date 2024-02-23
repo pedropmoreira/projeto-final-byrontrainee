@@ -1,23 +1,23 @@
 import React from 'react'
+import Redes from './Redes'
+import UltimasNoticias from './UltimasNoticias'
 
 const Header = () => {
   return (
-    <header className='flex bg-blue-hard w-full h-24 justify-between text-white '>
+    <header className='flex bg-blue-hard w-full h-24 justify-around text-white items-center '>
       {/* div da logo*/}
       <div className='flex items-center pl-4'>
         <picture className='max-w-96 flex justify-evenly items-center drop-shadow-lg'>
           <img src='/img/LOGO FINAl.png' className='w-24'></img>
         </picture>
         <h1 className='text-5xl font-bold drop-shadow-lg'>
-          NBAarea
+          NBArea
         </h1>
       </div>
           
-      <div className='flex  w-80 items-center justify-between text-xl font-semibold  '>
-          <span><a href='#ultNoticias'>Ùltimas notícias</a></span>
-          <span><a href='#times'>Times</a></span>
-          <span><a href='#noticias'>Notícias</a></span>
-      </div>
+      <UltimasNoticias tamanhoDinamico ={true} aparece= {true} />
+
+      <span><Redes /></span>
     </header>
   )
 }
