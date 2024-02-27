@@ -14,13 +14,15 @@ const config: Config = {
       "white-two":"#D9D9D9",
       "black": {
         "light":"#353C43",
-        "hard":"#2B2F33",
+        "hard":"#2B2F33"
+        
       
       },
       "blue":{
         "light":"#1D8BED",
         "medium":"#3882C3",
-        "hard":"#134AA6"
+        "hard":"#134AA6",
+        hardest: "#000023"
       }
 
     },
