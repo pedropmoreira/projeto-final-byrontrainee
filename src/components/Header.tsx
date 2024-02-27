@@ -14,7 +14,7 @@ const Header = () => {
           NBArea
         </h1>
       </div>
-          
+        
       <UltimasNoticias tamanhoDinamico ={true} aparece= {true} />
 
       <span><Redes /></span>
