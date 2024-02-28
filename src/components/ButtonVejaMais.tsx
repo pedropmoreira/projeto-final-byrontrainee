@@ -1,13 +1,19 @@
 import React from "react";
 
-const ButtonVejaMais = () => {
+interface IProps {
+  noticiaID:string;
+}
+
+const ButtonVejaMais: React.FunctionComponent<IProps> =  ({noticiaID}) => {
+
+  const handleClick = () => {
+    window.location.href = `/noticia/${noticiaID}`
+  }
+
   return (
-    <a
-      href="/noticia"
-      className="px-5 py-3 rounded-lg bg-red text-white text-2xl shadow hover:scale-105 transition-all"
-    >
+    <button className="px-5 py-3 rounded-lg bg-red text-white text-2xl shadow hover:scale-105 transition-all" onClick={handleClick}>
       Veja mais
-    </a>
+    </button>
   );
 };
 

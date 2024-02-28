@@ -12,22 +12,23 @@ import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
+
+
 export default function Home() {
 
 
+  const [timeSelecionado, setTimeSelecionado] = useState(teamsdata.times[2]);
   
-
 
   return (
 
     
-      
 
     <main className="bg-gradient-to-t  from-blue-hard to-blue-light flex flex-col items-center">
      
      <div className=" flex flex-col gap-8 bg-gradient-to-b from-blue-light to to-blue-hard p-10">
         {/* ÚLTIMAS NOTÍCIAS */}
-        <section className="flex items-center justify-center">
+        <section id="ultNoticias" className="flex items-center justify-center">
           <div className="flex flex-col justify-center bg-blue-hard rounded-xl shadow-md max-w-7xl">
             <div className=" bg-blue-hardest px-12 py-8 rounded-t-xl">
               <h2 className=" font-bold text-5xl text-white">
@@ -45,26 +46,21 @@ export default function Home() {
                 modules={[Navigation, Autoplay]}
               >
                 <SwiperSlide>
-                  <CardSm></CardSm>
+                  <CardSm id="1"></CardSm>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <CardSm></CardSm>
+                  <CardSm id="2"></CardSm>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <CardSm></CardSm>
+                  <CardSm id="5"></CardSm>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <CardSm></CardSm>
+                  <CardSm id="6"></CardSm>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <CardSm></CardSm>
+                  <CardSm id="10"></CardSm>
                 </SwiperSlide>
-                <SwiperSlide>
-                  <CardSm></CardSm>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <CardSm></CardSm>
-                </SwiperSlide>
+
               </Swiper>
             </div>
           </div>
@@ -72,18 +68,17 @@ export default function Home() {
         {/* /ÚLTIMAS NOTÍCIAS */}
  {/* section times*/}
 
-      <section>
+      <section id="times">
         <div className="bg-blue-hard text-white rounded-lg max-w-screen-2xl flex  shadow-lg border-0">
           {/* div times*/}
 
           <div className="flex h-full  ">
           <div className="bg-black-hard flex rounded-lg text-base font-semibold p-4  ">
             {/* conferencia leste*/}
-
             <div className="flex flex-col items-center max-w-48 m-4 ">
               <span>Conferência Leste</span>
               <div className="flex flex-wrap justify-center">
-              <LogoComponent conferencia="Conferência Leste" />
+              <LogoComponent timeSelecionadoID={timeSelecionado.id} cliqueTime={setTimeSelecionado} conferencia="Conferência Leste" />
               </div>
             </div>
 
@@ -95,19 +90,18 @@ export default function Home() {
             <div className="flex flex-col items-center max-w-44 m-4">
               <span>Conferência Oeste</span>
               <div className="flex flex-wrap justify-center">
-              <LogoComponent conferencia="Conferência Oeste" />
+              <LogoComponent timeSelecionadoID={timeSelecionado.id} cliqueTime={setTimeSelecionado} conferencia="Conferência Oeste" />
               </div>
             </div>
           </div>
 
           {/* div infos*/}
-
-          <div className="flex m-4">
+          {timeSelecionado && (<div className="flex m-4">
             {/* div logo*/}
             <div className="flex flex-col items-center justify-around h-full w-72 ">
               <picture>
                 <img
-                  src="/img/team logos/leste/logo-celtics.png"
+                  src={timeSelecionado.imageUrl}
                   className="w-56"
                 ></img>
               </picture>
@@ -116,32 +110,28 @@ export default function Home() {
               </picture>
 
               <div className="flex flex-col items-center">
-                <h2 className="text-3xl font-bold">Chicago Bulls</h2>
-                <span className="text-xl">Conferência Leste</span>
+                <h2 className="text-3xl font-bold ">{timeSelecionado.teamName}</h2>
+                <span className="text-xl">{timeSelecionado.teamConf}</span>
               </div>
             </div>
             {/* div info*/}
             <div className="flex flex-col w-80 justify-around ">
+              
               <p>
-                O Chicago Bulls é um time de basquete profissional americano
-                sediado em Chicago, Illinois. Os Bulls competem na National
-                Basketball Association (NBA) como um membro da Divisão Central
-                da Conferência Leste da liga.[3] A equipe foi fundada em 16 de
-                janeiro de 1966 e jogou seu primeiro jogo durante a temporada de
-                1966/67.[4] 
+              {timeSelecionado.text}
               </p>
-              <p>Títulos de Conferência:	6 (1991, 1992, 1993, 1996, 1997 e 1998)</p>
-              <p>Títulos de Conferência:	6 (1991, 1992, 1993, 1996, 1997 e 1998)</p>
+              <p>Títulos de Conferência: {timeSelecionado.confTitle}</p>
+              <p>Títulos de Divisão: {timeSelecionado.divTitle}</p>
               
             </div>
-          </div>
+          </div>)}
+          
           </div>
         </div>
       </section>
         {/* NOTÍCIAS */}
-        <section className="flex items-center justify-center">
+        <section id = "noticias" className="flex items-center justify-center">
           <div className="flex flex-col items-center justify-center w-full gap-4">
-            <CardLg></CardLg>
             <CardLg></CardLg>
           </div>
         </section>

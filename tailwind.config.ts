@@ -22,7 +22,7 @@ const config: Config = {
         "light":"#1D8BED",
         "medium":"#3882C3",
         "hard":"#134AA6",
-        hardest: "#000023"
+        "hardest": "#000023"
       }
 
     },

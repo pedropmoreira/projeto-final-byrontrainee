@@ -4,7 +4,7 @@ import Redes from './Redes'
 const Footer = () => {
   return (
     
-    <footer className='bg-blue-hard text-white h-52 flex flex-col justify-center'>
+    <footer className='bg-blue-hard text-white h-52 flex flex-col justify-center  shadow-inner'>
       <div className=' flex justify-around items-center '>
       
       <picture>

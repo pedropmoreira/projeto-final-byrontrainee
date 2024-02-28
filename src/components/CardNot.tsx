@@ -1,43 +1,52 @@
 import React from "react";
+import noticiasData from "@/datateams/noticiasData";
+import ButtonVejaMais from "./ButtonVejaMais";
 
-const CardNot = () => {
+
+
+const CardNot : React.FunctionComponent =() => {
+  
+  const noticiasRecentes = noticiasData.noticias.filter((noticiasRec)=> noticiasRec.notNew === "sim");
+
+  let contador = 1;
+  
   return (
-    <div className="grid grid-cols-3 items-center bg-white rounded-lg shadow-lg ">
-      <div className="h-full">
-        <picture className="relative">
-          <img
-            className="h-full object-cover rounded-l-lg border-r-8 border-red"
-            src="/img/noticia2.png"
-            alt=""
-          />
-          <div>
+
+    <div className="flex flex-col gap-3">
+      {noticiasRecentes.map((notRecent)=>(
+        <div className="grid grid-cols-3 items-center bg-white rounded-lg shadow-lg ">
+        <div className="h-full">
+          <picture className="relative">
             <img
-              className="absolute bottom-0 left-0 rounded-bl-lg w-20"
-              src="/img/triangulo.png"
-              alt=""
+              className="h-full object-cover rounded-l-lg border-r-8 border-red"
+              src={notRecent.notImageUrl}
+              alt={notRecent.notTitle}
             />
-            <span className="absolute bottom-2 left-2 text-2xl font-extrabold">
-              1
-            </span>
+            <div>
+              <img
+                className="absolute bottom-0 left-0 rounded-bl-lg w-20"
+                src="/img/triangulo.png"
+                alt= {`Um triangulo com o numero ${contador}`}
+              />
+              <span className="absolute bottom-2 left-2 text-2xl font-extrabold">
+                {contador++}
+              </span>
+            </div>
+          </picture>
+        </div>
+  
+        <div className="flex flex-col p-8 gap-4 col-span-2">
+          <h2 className=" font-medium text-xl">
+            {notRecent.notTitle}
+          </h2>
+  
+          <div className="flex  justify-end">
+
+            <ButtonVejaMais noticiaID={notRecent.id}/>
           </div>
-        </picture>
-      </div>
-
-      <div className="flex flex-col p-8 gap-2 col-span-2">
-        <h2 className=" font-medium text-xl">
-          Astros da NBA divergem sobre críticas ao All-Star Game
-        </h2>
-
-        <div className="flex justify-between items-center">
-          <div>
-            <p>21/02/2024</p>
-          </div>
-
-          <a className="px-4 py-1 rounded-full bg-red text-white shadow hover:scale-105 transition-all">
-            Veja mais
-          </a>
         </div>
       </div>
+      ))}
     </div>
   );
 };
