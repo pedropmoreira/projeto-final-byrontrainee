@@ -10,10 +10,6 @@ Guilherme Livianu.
 ## Layout
 O design pode ser visto no figma :  
   
-<a href="https://www.figma.com/file/IjEyeDpZEsyRdezMcWNIi8/NBArea?type=design&node-id=4%3A5&mode=design&t=FxmDQflCrhJOSCa4-1">
-  <img alt="repositorio figma" src="https://img.shields.io/badge/Acessar%20Layout%20-Figma-%2304D361">
-</a>
-
 [![Tailwind Badge](https://img.shields.io/badge/Figma-F24E1E.svg?style=for-the-badge&logo=Figma&logoColor=white)](https://www.figma.com/file/IjEyeDpZEsyRdezMcWNIi8/NBArea?type=design&node-id=0%3A1&mode=design&t=THABIv9skd3w4Jnh-1)
 
 ### Mobile 
