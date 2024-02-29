@@ -2,6 +2,8 @@ import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import { Inter } from "next/font/google";
+import Head from "next/head";
+import { request } from "https";
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({
@@ -15,8 +17,12 @@ interface IProps {
 
 const Layout = ({ children }: IProps) => {
   return (
-    <div className={inter.className}>
-      <Header />
+    <div className={`${inter.className} scroll-smooth`}>
+      <Head>
+        <link rel="icon" href="/img/LOGO FINAL.png" />
+        <title>NBArea</title>
+      </Head>
+      <Header aparece={false} />
       <main>{children}</main>
       <Footer />
     </div>

@@ -1,4 +1,5 @@
 import CardNot from "@/components/CardNot";
+import UltimasNoticias from "@/components/UltimasNoticias";
 import noticiasData from "@/datateams/noticiasData";
 import { useRouter } from "next/router";
 
@@ -9,12 +10,16 @@ export default function Page() {
   console.log(noticiaID);
 
   if (!noticiaID) {
-    return <div>Carregando...</div>;
+    return (
+      <div className="flex items-center justify-center w-screen h-screen bg-gradient-to-br from-blue-hard to-red text-9xl text-white font-black">
+        Carregando...
+      </div>
+    );
   }
 
   return (
     <main className="flex justify-center bg-gradient-to-b from-blue-light to to-blue-hard p-10">
-      <div className="flex flex-col-reverse lg:flex-row max-w-7xl gap-10">
+      <div className="flex flex-col-reverse lg:flex-row max-w-7xl gap-10 mt-56 lg:mt-28">
         <aside id="ultNoticias" className="flex justify-center h-fit lg:w-1/3">
           <div className="flex flex-col gap-7 p-7 items-center bg-blue-hardest rounded-xl shadow-lg">
             <h2 className=" text-white font-extrabold text-2xl">

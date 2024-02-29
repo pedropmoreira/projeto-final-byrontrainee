@@ -6,23 +6,15 @@ import teamsdata from "@/datateams/teamsdata";
 import CardLg from "@/components/CardLg";
 import CardSm from "@/components/CardSm";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/autoplay";
-import "swiper/css/navigation";
 import { NotCarousel } from "@/components/NotCarousel";
 
 export default function Home() {
   const [timeSelecionado, setTimeSelecionado] = useState(teamsdata.times[2]);
 
   return (
-    <main className="bg-gradient-to-t  from-blue-hard to-blue-light flex flex-col items-center">
-      <div className=" flex flex-col gap-8 py-10">
+    <main className="scroll-smooth bg-gradient-to-t  from-blue-hard to-blue-light flex flex-col items-center">
+      <div className=" flex flex-col mt-56 lg:mt-28 gap-8 py-10">
         {/* ÚLTIMAS NOTÍCIAS */}
-
-        {/* <div className="w-screen p-8">
-          <NotCarousel />
-        </div> */}
 
         <section id="ultNoticias" className="flex items-center justify-center">
           <div className="flex flex-col justify-center bg-gradient-to-br from-blue-hard to-red rounded-xl shadow-md sm:max-w-7xl mx-8">

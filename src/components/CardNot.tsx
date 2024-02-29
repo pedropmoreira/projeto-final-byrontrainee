@@ -1,6 +1,5 @@
 import React from "react";
 import noticiasData from "@/datateams/noticiasData";
-import ButtonVejaMais from "./ButtonVejaMaisNot";
 import ButtonVejaMaisNot from "./ButtonVejaMaisNot";
 
 const CardNot: React.FunctionComponent = () => {
