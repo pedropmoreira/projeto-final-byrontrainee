@@ -1,51 +1,47 @@
 import React from "react";
 import noticiasData from "@/datateams/noticiasData";
-import ButtonVejaMais from "./ButtonVejaMais";
+import ButtonVejaMais from "./ButtonVejaMaisNot";
+import ButtonVejaMaisNot from "./ButtonVejaMaisNot";
 
-
-
-const CardNot : React.FunctionComponent =() => {
-  
-  const noticiasRecentes = noticiasData.noticias.filter((noticiasRec)=> noticiasRec.notNew === "sim");
+const CardNot: React.FunctionComponent = () => {
+  const noticiasRecentes = noticiasData.noticias.filter(
+    (noticiasRec) => noticiasRec.notNew === "sim"
+  );
 
   let contador = 1;
-  
+
   return (
-
     <div className="flex flex-col gap-3">
-      {noticiasRecentes.map((notRecent)=>(
+      {noticiasRecentes.map((notRecent) => (
         <div className="grid grid-cols-3 items-center bg-white rounded-lg shadow-lg ">
-        <div className="h-full">
-          <picture className="relative">
-            <img
-              className="h-full object-cover rounded-l-lg border-r-8 border-red"
-              src={notRecent.notImageUrl}
-              alt={notRecent.notTitle}
-            />
-            <div>
+          <div className="h-full">
+            <picture className="relative">
               <img
-                className="absolute bottom-0 left-0 rounded-bl-lg w-20"
-                src="/img/triangulo.png"
-                alt= {`Um triangulo com o numero ${contador}`}
+                className="h-full object-cover rounded-l-lg border-r-8 border-red"
+                src={notRecent.notImageUrl}
+                alt={notRecent.notTitle}
               />
-              <span className="absolute bottom-2 left-2 text-2xl font-extrabold">
-                {contador++}
-              </span>
-            </div>
-          </picture>
-        </div>
-  
-        <div className="flex flex-col p-8 gap-4 col-span-2">
-          <h2 className=" font-medium text-xl">
-            {notRecent.notTitle}
-          </h2>
-  
-          <div className="flex  justify-end">
+              <div>
+                <img
+                  className="absolute bottom-0 left-0 rounded-bl-lg w-14"
+                  src="/img/triangulo.png"
+                  alt={`Um triangulo com o numero ${contador}`}
+                />
+                <span className="absolute bottom-1 left-1 text-xl font-extrabold">
+                  {contador++}
+                </span>
+              </div>
+            </picture>
+          </div>
 
-            <ButtonVejaMais noticiaID={notRecent.id}/>
+          <div className="flex flex-col p-4 gap-2 col-span-2">
+            <h2 className=" font-medium text-sm">{notRecent.notTitle}</h2>
+
+            <div className="flex ali">
+              <ButtonVejaMaisNot noticiaID={notRecent.id} />
+            </div>
           </div>
         </div>
-      </div>
       ))}
     </div>
   );

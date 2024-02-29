@@ -4,14 +4,14 @@ interface IProps {
   noticiaID: string;
 }
 
-const ButtonVejaMais: React.FunctionComponent<IProps> = ({ noticiaID }) => {
+const ButtonVejaMaisNot: React.FunctionComponent<IProps> = ({ noticiaID }) => {
   const handleClick = () => {
     window.location.href = `/noticia/${noticiaID}`;
   };
 
   return (
     <button
-      className="px-8 py-2 rounded-lg bg-red text-white text-xl shadow-lg hover:scale-105 transition-all"
+      className="px-4 py-1 rounded-full bg-red text-white text-xs font-medium shadow-lg hover:scale-105 transition-all"
       onClick={handleClick}
     >
       Veja mais
@@ -19,4 +19,4 @@ const ButtonVejaMais: React.FunctionComponent<IProps> = ({ noticiaID }) => {
   );
 };
 
-export default ButtonVejaMais;
+export default ButtonVejaMaisNot;

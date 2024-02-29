@@ -7,10 +7,23 @@ interface IProps {
   timeSelecionadoID: string;
 }
 
-const LogoComponent: React.FunctionComponent<IProps> = ({conferencia,cliqueTime,timeSelecionadoID,}) => {
-  
-  {/*erro estranho*/}
-  const handleClick = (team) => {
+const LogoComponent: React.FunctionComponent<IProps> = ({
+  conferencia,
+  cliqueTime,
+  timeSelecionadoID,
+}) => {
+  {
+    /*erro estranho*/
+  }
+  const handleClick = (team: {
+    id: string;
+    teamName: string;
+    imageUrl: string;
+    teamConf: string;
+    text: string;
+    confTitle: string;
+    divTitle: string;
+  }) => {
     cliqueTime(team);
   };
 
@@ -19,12 +32,12 @@ const LogoComponent: React.FunctionComponent<IProps> = ({conferencia,cliqueTime,
   );
 
   return (
-    <div className=" ">
-      <picture className=" flex  flex-wrap">
+    <div className="">
+      <picture className="flex flex-wrap justify-center">
         {timesExibidos.map((team) => (
           <img
             key={team.id}
-            className={`bg-white-two h-12 w-12 rounded-lg m-1 cursor-pointer ${
+            className={`bg-white h-14 w-14 rounded-lg m-1 p-[2px] cursor-pointer ${
               team.id === timeSelecionadoID ? "border-4 border-red" : ""
             }`}
             alt={`logo do ${team.teamName}`}
