@@ -32,6 +32,16 @@ O design pode ser visto no figma :
 #### Noticias
 <img src = "https://i.imgur.com/Bp6tCvY.png ">
 
+## Funcionalidades  
+### NavBar Interativo
+![NavBar Interativo](https://i.imgur.com/mdUHAvN.gif)  
+### Tab Times
+![Tab Times](https://i.imgur.com/eX9f6l0.gif)  
+### Notícias Dinâmicas
+![NavBar Interativo](https://i.imgur.com/CmVPm1c.gif)  
+### Carrossel
+![NavBar Interativo](https://i.imgur.com/IioBjK1.gif)  
+
 ## Como Funciona ? 
 O Projeto possui um banco de dados em formato JSON, o qual interage com o front-end do site possibilitando a criação de noticias, ou a inclusão de um novo time, apenas criando um novo dado no array. 
 
