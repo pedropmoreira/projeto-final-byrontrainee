@@ -13,12 +13,12 @@ const CardSm: React.FunctionComponent<IProps> = ({ id }) => {
 
   return notRecent.map((notExibida) => (
     <div className="flex flex-col items-center">
-      <div className="flex flex-col justify-between w-96 h-[450px] bg-white p-4 rounded-2xl gap-4 shadow-xl">
+      <div className="flex flex-col justify-between sm:w-96 w-80 sm:h-[450px] h-[400px] bg-white p-4 rounded-2xl gap-4 shadow-xl">
         <img
           className=" h-1/2 object-cover rounded-2xl"
           src={noticiasData.noticias[Number(notExibida.id) - 1].notImageUrl}
         />
-        <h2 className=" font-medium text-2xl">
+        <h2 className=" font-medium text-xl">
           {noticiasData.noticias[Number(notExibida.id) - 1].notTitle}
         </h2>
         <div className="flex justify-between items-center">

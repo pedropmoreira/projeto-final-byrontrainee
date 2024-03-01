@@ -7,24 +7,27 @@ import CardLg from "@/components/CardLg";
 import CardSm from "@/components/CardSm";
 
 import { NotCarousel } from "@/components/NotCarousel";
+import Header from "@/components/Header";
 
 export default function Home() {
   const [timeSelecionado, setTimeSelecionado] = useState(teamsdata.times[2]);
 
   return (
     <main className="scroll-smooth bg-gradient-to-t  from-blue-hard to-blue-light flex flex-col items-center">
-      <div className=" flex flex-col mt-56 lg:mt-28 gap-8 py-10">
+      <Header home />
+
+      <div className=" flex flex-col mt-44 lg:mt-28 gap-10 py-10">
         {/* ÚLTIMAS NOTÍCIAS */}
 
         <section id="ultNoticias" className="flex items-center justify-center">
           <div className="flex flex-col justify-center bg-gradient-to-br from-blue-hard to-red rounded-xl shadow-md sm:max-w-7xl mx-8">
             <div className=" bg-blue-hardest px-12 py-8 rounded-t-xl">
-              <h2 className=" font-bold text-5xl text-white">
+              <h2 className=" font-bold text-3xl text-white">
                 Últimas notícias
               </h2>
             </div>
 
-            <div className="max-w-7xl w-[85vw] p-8">
+            <div className="max-w-7xl lg:w-[95vw] md:w-[91vw] w-[85vw] p-8">
               <NotCarousel />
             </div>
           </div>
@@ -100,7 +103,7 @@ export default function Home() {
 
         {/* NOTÍCIAS */}
         <section id="noticias" className="flex items-center justify-center">
-          <div className="flex flex-col items-center justify-center w-full gap-4 mx-8">
+          <div className="flex flex-col items-center justify-center w-full gap-6 mx-8">
             <CardLg></CardLg>
           </div>
         </section>

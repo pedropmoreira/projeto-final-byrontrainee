@@ -4,7 +4,7 @@ import noticiasData from "@/datateams/noticiasData";
 
 const CardLg = () => {
   return noticiasData.noticias.map((notExibida) => (
-    <div className="flex flex-col lg:flex-row items-center bg-white rounded-lg lg:max-h-80 max-w-3xl lg:max-w-7xl shadow-lg">
+    <div className="flex flex-col lg:flex-row items-center bg-white rounded-lg lg:max-h-80 w-full lg:max-w-7xl lg:w-7xl shadow-lg">
       <div className="w-full lg:h-full lg:w-auto">
         <img
           className="h-80 lg:h-64 w-full lg:w-[600px] object-cover rounded-t-lg lg:rounded-tr-none lg:rounded-l-lg border-b-8 lg:border-b-0 lg:border-r-8 border-red"

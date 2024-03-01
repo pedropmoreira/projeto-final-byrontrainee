@@ -22,7 +22,6 @@ const Layout = ({ children }: IProps) => {
         <link rel="icon" href="/img/LOGO FINAL.png" />
         <title>NBArea</title>
       </Head>
-      <Header aparece={false} />
       <main>{children}</main>
       <Footer />
     </div>
